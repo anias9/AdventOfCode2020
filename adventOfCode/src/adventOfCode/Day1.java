@@ -22,29 +22,13 @@ In your expense report, what is the product of the three entries that sum to 202
 
 package adventOfCode;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class day1{
-	
-	public static List<Integer> fileReading() throws IOException {
-		Scanner s = new Scanner(new File("src/data/day1.txt"));
-		
-		List<Integer> list = new ArrayList<>();
-		
-		while(s.hasNext()) {
-			list.add(Integer.parseInt(s.next()));
-		}
-		s.close();
-		
-		return list;
-	}
+public class Day1{
 	
 	public static void part1() throws IOException {
-		List<Integer> list = fileReading();
+		List<Integer> list = FileHelper.fileReadingToInt("src/data/day1.txt");
 		Integer year = 2020;
 		
 		for(int i = 0; i < list.size(); i++) {
@@ -59,7 +43,7 @@ public class day1{
 	}
 	
 	public static void part2() throws IOException {
-		List<Integer> list = fileReading();
+		List<Integer> list = FileHelper.fileReadingToInt("src/data/day1.txt");
 		Integer year = 2020;
 		
 		for(int i = 0; i < list.size(); i++) {
