@@ -35,29 +35,13 @@ In the above example, these slopes would find 2, 7, 3, 4, and 2 tree(s) respecti
 
 package adventOfCode;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class day3{
-	
-	public static List<String> fileReading() throws IOException {
-		Scanner s = new Scanner(new File("src/data/day3.txt"));
-		
-		List<String> list = new ArrayList<>();
-		
-		while(s.hasNextLine()) {
-			list.add(s.nextLine());
-		}
-		s.close();
-		
-		return list;
-	}
+public class Day3{
 	
 	public static void forestWalk() throws IOException{		
-		List<String> list = fileReading();
+		List<String> list = FileHelper.fileReading("src/data/day3.txt");
 		int iter = 0; 
 		int counter = 0;
 		int counter2 = 0;
@@ -135,8 +119,6 @@ public class day3{
 		System.out.println("answer slope 4 " + counter4);
 		System.out.println("answer slope 5 " + counter5);
 		long total = counter * counter2 * counter3 * counter4 ; 
-		
-		// right answer: 3 517 401 300
 		
 		System.out.println("Total: PART 2 " + (total * counter5)); 
 	}
