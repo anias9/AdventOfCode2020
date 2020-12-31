@@ -22,6 +22,20 @@ public class FileHelper {
 		return list;
 	}
 	
+	public static List<String> fileReadingWithoutLines(String fileName) throws IOException {
+		Scanner s = new Scanner(new File(fileName));
+		
+		List<String> list = new ArrayList<>();
+				
+		while(s.hasNextLine()) {
+			
+			list.add(s.next());
+		}
+		s.close();
+		
+		return list;
+	}
+	
 	public static List<Integer> fileReadingToInt(String fileName) throws IOException {
 		Scanner s = new Scanner(new File(fileName));
 		
